@@ -6,10 +6,11 @@ class PokemonController
     function __construct()
     {
         $this->pokemons = [
-            1 => new Pokemon("Wolkswagen","Polo","negro","Rebeca"),
-            2 => new Pokemon("Toyota","Corolla","verde","Marcos"),
-            3 => new Pokemon("Skoda","Octavia","gris","Mario"),
-            4 => new Pokemon("Kia","Niro","azul","Jairo")
+            1 => new Pokemon("Bulbasaur","0.7 m","Semilla","6.9 kg", "Espesura","Planta","Fuego"),
+            2 => new Pokemon("Charmander","0.6 m","Lagartija","8.5 kg", "Mar Llamas","Fuego","Agua"),
+            3 => new Pokemon("Squirtle","0.5 m","Tortuguita","9.0 kg", "Torrente","Agua","PLanta"),
+            4 => new Pokemon("Caterpie","0.3 m","Gusano","2.9 kg", "Polvo Escudo","Bicho","Fuego"),
+            5 => new Pokemon("Pidgey","0.3 m","Pajarito","1.8 kg", "Tumbos","Volador","Electrico")
         ];
     }
 
