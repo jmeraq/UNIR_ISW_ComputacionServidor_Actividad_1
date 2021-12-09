@@ -26,10 +26,13 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nombre</th>
+                        <th scope="col">Nombre Deletreado</th>
                         <th scope="col">Altura</th>
                         <th scope="col">Categoria</th>
+                        <th scope="col">Categoria Deletreado</th>
                         <th scope="col">Peso</th>
                         <th scope="col">Habilidad</th>
+                        <th scope="col">Habilidad Deletreado</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Debilidad</th>
                     </tr>
@@ -41,10 +44,41 @@
                         <tr>
                             <th scope="row"><?php echo $number_row; ?></th>
                             <td><?php echo $row->nombre ?></td>
+                            <td>
+                                <?php
+                                    $i = strlen($row->nombre);
+                                    $nombre_array= str_split($row->nombre);
+                                    for ($c=0;$c<$i;$c++){
+                                        echo '<span class="badge bg-success">'.strtoupper($nombre_array[$c]).' </span> ';
+                                    }
+                                ?>
+                            </td>
                             <td><?php echo $row->altura ?></td>
                             <td><?php echo $row->categoria ?></td>
+                            <td>
+                                <?php
+                                    $i = strlen($row->categoria);
+                                    $nombre_array= str_split($row->categoria);
+                                    $c=0;
+                                    while ($c<$i){
+                                        echo '<span class="badge bg-info">'.strtoupper($nombre_array[$c]).' </span> ';
+                                        $c++;
+                                    }
+                                ?>
+                            </td>
                             <td><?php echo $row->peso ?></td>
                             <td><?php echo $row->habilidad ?></td>
+                            <td>
+                                <?php
+                                    $i = strlen($row->habilidad);
+                                    $nombre_array= str_split($row->habilidad);
+                                    $c=0;
+                                    do{
+                                        echo '<span class="badge bg-warning">'.strtoupper($nombre_array[$c]).' </span> ';
+                                        $c++;
+                                    }while ($c<$i)
+                                ?>
+                            </td>
                             <td><?php echo $row->tipo ?></td>
                             <td><?php echo $row->debilidad ?></td>
                         </tr>
