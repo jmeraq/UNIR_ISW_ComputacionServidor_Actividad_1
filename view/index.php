@@ -19,7 +19,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="display-4">Pokedex</h1>
+            <h1 class="display-4">Pokedex <a href="index.php?route=formulario" class="btn btn-primary">Nuevo Pokemon</a></h1>
             <hr>
             <table class="table table-borderless">
                 <thead>
@@ -35,6 +35,7 @@
                         <th scope="col">Habilidad Deletreado</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Debilidad</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -81,6 +82,8 @@
                             </td>
                             <td><?php echo $row->tipo ?></td>
                             <td><?php echo $row->debilidad ?></td>
+                            <td><a href="index.php?route=formulario&id=<?php echo $row->id;?>" class="btn btn-primary">Edit</a></td>
+                            <td><a href="index.php?route=delete&id=<?php echo $row->id;?>" class="btn btn-danger" onclick="return confirm('Estas seguro de eliminar este pokemon ?');">Delete</a></td>
                         </tr>
                     <?php $number_row++; ?>
                     <?php endforeach; ?>

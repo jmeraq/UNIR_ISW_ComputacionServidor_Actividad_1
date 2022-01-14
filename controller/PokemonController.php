@@ -1,25 +1,49 @@
 <?php
 class PokemonController
 {
-    var $pokemons;
-
-    function __construct()
-    {
-        $this->pokemons = [
-            1 => new Pokemon("Bulbasaur","0.7 m","Semilla","6.9 kg", "Espesura","Planta","Fuego"),
-            2 => new Pokemon("Charmander","0.6 m","Lagartija","8.5 kg", "Llamas","Fuego","Agua"),
-            3 => new Pokemon("Squirtle","0.5 m","Tortuguita","9.0 kg", "Torrente","Agua","PLanta"),
-            4 => new Pokemon("Caterpie","0.3 m","Gusano","2.9 kg", "Escudo","Bicho","Fuego"),
-            5 => new Pokemon("Pidgey","0.3 m","Pajarito","1.8 kg", "Tumbos","Volador","Electrico")
-        ];
-    }
-
     public function index(){
         //Asigno los coches a una variable que estará esperando la vista
-        $rowset = $this->pokemons;
+        $rowset = Pokemons::getAllPokemon();
 
         //Le paso los datos a la vista
         require("view/index.php");
+    }
+
+    public function form(){
+        $pokemon = new Pokemon();
+        if(isset($_GET["id"])){
+            $pokemon->getPokemon($_GET["id"]);
+        }else{
+            $pokemon->id=0;
+        }
+        require("view/form.php");
+    }
+
+    public function save(){
+        $pokemon = new pokemon();
+        $pokemon->nombre=$_POST["nombre"];
+        $pokemon->altura=$_POST["altura"];
+        $pokemon->categoria=$_POST["categoria"];
+        $pokemon->peso=$_POST["peso"];
+        $pokemon->habilidad=$_POST["habilidad"];
+        $pokemon->tipo=$_POST["tipo"];
+        $pokemon->debilidad=$_POST["debilidad"];
+        $pokemon->id=$_POST["id"];
+        $pokemon->save();
+
+        header('Location: index.php');
+    }
+
+    public function delete(){
+        $pokemon = new pokemon();
+        if(isset($_GET["id"])){
+            $pokemon->getPokemon($_GET["id"]);
+        }else{
+            $pokemon->id=0;
+        }
+        $pokemon->delete();
+
+        header('Location: index.php');
     }
 
 }
