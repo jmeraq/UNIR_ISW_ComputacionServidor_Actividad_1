@@ -1,11 +1,10 @@
 <?php
 class PokemonController
 {
+
     public function index(){
-        //Asigno los coches a una variable que estará esperando la vista
         $rowset = Pokemons::getAllPokemon();
 
-        //Le paso los datos a la vista
         require("view/index.php");
     }
 

@@ -10,21 +10,17 @@ $route="";
 if(isset($_GET['route'])) {
     $route=$_GET['route'];
 }
-
+$controller = new PokemonController;
 switch ($route) {
     case "formulario":
-        $controller = new PokemonController;
         $controller->form();
         break;
     case "save":
-        $controller = new PokemonController;
         $controller->save();
         break;
     case "delete":
-        $controller = new PokemonController;
         $controller->delete();
         break;
     default:
-        $controller = new PokemonController;
         $controller->index();
 }
