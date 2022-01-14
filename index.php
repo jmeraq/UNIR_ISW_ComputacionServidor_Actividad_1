@@ -1,6 +1,7 @@
 <?php
 
 //Incluyo los archivos necesarios
+require("./model/Animal.php");
 require("./model/Pokemon.php");
 require("./model/Pokemons.php");
 require("./controller/PokemonController.php");

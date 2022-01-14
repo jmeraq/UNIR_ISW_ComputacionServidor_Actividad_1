@@ -23,8 +23,6 @@ class Pokemons
                     $pokemon->id=$row["id"];
                     $pokemons[]=$pokemon;
                 }
-            } else {
-                echo "0 results";
             }
         }
         $mysqli->close();

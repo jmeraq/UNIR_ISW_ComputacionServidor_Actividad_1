@@ -1,13 +1,10 @@
 <?php
 
-class Pokemon
+class Pokemon extends Animal
 {
     //Variables o atributos
     var $id;
-    var $nombre;
-    var $altura;
     var $categoria;
-    var $peso;
     var $habilidad;
     var $tipo;
     var $debilidad;
@@ -113,18 +110,6 @@ class Pokemon
     /**
      * @return mixed
      */
-    public function getAltura()
-    {
-        return $this->altura;
-    }
-
-    /**
-     * @param mixed $altura
-     */
-    public function setAltura($altura)
-    {
-        $this->altura = $altura;
-    }
 
     /**
      * @return mixed
@@ -140,22 +125,6 @@ class Pokemon
     public function setCategoria($categoria)
     {
         $this->categoria = $categoria;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPeso()
-    {
-        return $this->peso;
-    }
-
-    /**
-     * @param mixed $peso
-     */
-    public function setPeso($peso)
-    {
-        $this->peso = $peso;
     }
 
     /**
@@ -205,22 +174,4 @@ class Pokemon
     {
         $this->debilidad = $debilidad;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    /**
-     * @param mixed $nombre
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-    }
-
-
 }
